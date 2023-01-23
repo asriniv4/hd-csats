@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld msg="C-SATS Micro Frontend App"/>
+  <MyCases />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyCases from './components/MyCases.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MyCases
   }
 }
 </script>

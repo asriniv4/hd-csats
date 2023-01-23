@@ -1,3 +1,25 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+const loading = ref(true);
+const cases = ref(null);
+
+const GET_CASES_URL = 'https://csats.ismorebetter.com/.netlify/functions/get-cases';
+
+onMounted(() => {
+  axios.get(GET_CASES_URL)
+    .then((response) => {
+      cases.value = response.data;
+      loading.value = false;
+      console.log(response);
+    })
+    .catch((error) => {
+      loading.value = false;
+      console.log(error);
+    })
+})
+</script>
 <template>
   <main>
     <section class="py-5 text-center container">
@@ -159,15 +181,6 @@
     </div>
   </main>
 </template>
-
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
