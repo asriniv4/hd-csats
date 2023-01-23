@@ -27,7 +27,9 @@ exports.handler = async function (event, context) {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "*", // TODO: Tighten security here
+      "Content-Type": "image/png, application/octet-strean",
     },
+    isBase64Encoded: true,
     body: data,
   };
 
