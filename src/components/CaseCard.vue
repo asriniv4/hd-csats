@@ -44,7 +44,7 @@ onMounted(() => {
 
 <style scoped>
 img {
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
 }
 </style>
