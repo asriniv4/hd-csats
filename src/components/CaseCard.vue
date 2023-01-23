@@ -11,13 +11,10 @@ defineProps({
 
 const thumbnail_image = ref(null);
 
-const GET_THUMBNAIL_URL = 'https://google.com/';
-
-// const GET_THUMBNAIL_URL = `
-// https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.thumbnail_location}
-// `
-
 onMounted(() => {
+  console.log(this);
+  const GET_THUMBNAIL_URL = 'https://google.com/'
+    //https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.thumbnail_location};
   axios.get(GET_THUMBNAIL_URL)
     .then((response) => {
       thumbnail_image.value = response.data;
