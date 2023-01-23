@@ -17,8 +17,8 @@ exports.handler = async function (event, context) {
     .from('case-thumbnails')
     .createSignedUrl(thumbnailName, 60000, {
       transform: {
-        width: 400,
-        height: 300,
+        width: 375,
+        height: 250,
       },
     })
   if (error) {
