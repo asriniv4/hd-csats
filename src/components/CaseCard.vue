@@ -11,7 +11,9 @@ defineProps({
 
 const thumbnail_image = ref(null);
 
-const GET_THUMBNAIL_URL = 'https://aurora.ismorebetter.com/.netlify/function/get-thumbnail';
+const GET_THUMBNAIL_URL = `
+https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.thumbnail_location}
+`
 
 onMounted(() => {
   axios.get(GET_THUMBNAIL_URL)
