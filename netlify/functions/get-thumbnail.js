@@ -12,8 +12,8 @@ exports.handler = async function (event, context) {
   //   .storage
   //   .from('case-thumbnails')
   //   .download(event)
-  console.log(event)
-  console.log(context)
+  console.log(event.queryStringParameters)
+  console.log(context.queryStringParameters)
 
   return {
     statusCode: 200,
