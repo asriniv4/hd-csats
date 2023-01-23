@@ -8,10 +8,12 @@ const {
 const supabase = createClient(CSATS_DATABASE_URL, CSATS_DATABASE_SECRET_API_KEY);
 
 exports.handler = async function (event, context) {
-  const thumbnameName = event.queryStringParameters
+  console.log('in get-thumbnail')
+  console.log(event.queryStringParameters)
+  const thumbnameName = event.queryStringParameters['name'];
+  console.log(thumbnameName);
 
-  let { data, error } = await supabase
-    .storage
+  let { data, error } = await supabase.storage
     .from('case-thumbnails')
     .download(thumbnameName);
 
