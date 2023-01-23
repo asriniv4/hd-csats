@@ -1,8 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { defineProps, ref, onMounted, toRefs } from 'vue';
 import axios from 'axios';
 
-defineProps({
+const props = defineProps({
   myCase: {
     type: Object,
     required: true,
@@ -11,10 +11,12 @@ defineProps({
 
 const thumbnail_image = ref(null);
 
+const { myCase } = toRefs(props);
+const GET_THUMBNAIL_URL = `https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.value.thumbnail_location}`;
+
 onMounted(() => {
-  console.log(this);
-  const GET_THUMBNAIL_URL = 'https://google.com/'
-    //https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.thumbnail_location};
+  console.log('hellow!!!!!');
+  console.log(GET_THUMBNAIL_URL);
   axios.get(GET_THUMBNAIL_URL)
     .then((response) => {
       thumbnail_image.value = response.data;
