@@ -15,8 +15,12 @@ exports.handler = async function (event, context) {
 
   let { data, error } = await supabase.storage
     .from('case-thumbnails')
-    .download(thumbnameName);
-
+    .createSignedUrl(thumbnameName, 60000, {
+      transform: {
+        width: 300,
+        height: 200,
+      },
+    })
   if (error) {
     console.log(error)
   }
@@ -27,10 +31,8 @@ exports.handler = async function (event, context) {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "*", // TODO: Tighten security here
-      "Content-Type": "image/png, application/octet-strean",
     },
-    isBase64Encoded: true,
-    body: data,
+    body: JSON.stringify(data),
   };
 
 }
