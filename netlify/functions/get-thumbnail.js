@@ -15,7 +15,11 @@ exports.handler = async function (event, context) {
     .from('case-thumbnails')
     .download(thumbnameName);
 
-  console.log(data, error);
+  if (error) {
+    console.log(error)
+  }
+
+  console.log(data);
 
   return {
     statusCode: 200,

@@ -12,7 +12,7 @@ const props = defineProps({
 const thumbnail_image = ref(null);
 
 const { myCase } = toRefs(props);
-const GET_THUMBNAIL_URL = `https://aurora.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.value.thumbnail_location}`;
+const GET_THUMBNAIL_URL = `https://csats.ismorebetter.com/.netlify/function/get-thumbnail?name=${myCase.value.thumbnail_location}`;
 
 onMounted(() => {
   console.log('hellow!!!!!');
