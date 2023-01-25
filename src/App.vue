@@ -1,15 +1,16 @@
 <template>
-  <MyCases />
+  Placeholder for C-SATS App UI
+  <!-- <MyCases /> -->
 </template>
 
 <script>
-import MyCases from './components/MyCases.vue'
+// import MyCases from './components/MyCases.vue'
 
 export default {
   name: 'App',
-  components: {
-    MyCases
-  }
+  // components: {
+  //   MyCases
+  // }
 }
 </script>
 
