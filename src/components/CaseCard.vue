@@ -52,8 +52,7 @@ onMounted(() => {
 
 <style scoped>
 img {
-  width: 375px;
-  height: 250px;
+  width: 100%;
 }
 div.d-flex {
   width: 375px;
